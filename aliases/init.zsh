@@ -61,12 +61,12 @@ alias -g ......="../../../../.."
     (( ${+commands[kubectx]} )) && alias kctx="kubectx"
 }
 
-if (( ${+commands[nerdctl]} )); then
+if (( ${+commands[docker]} )); then
     alias d="docker"
     alias db="docker build"
     alias di="docker images"
     alias dn="docker network"
-elif (( ${+commands[docker]} )); then
+elif (( ${+commands[nerdctl]} )); then
     alias n="nerdctl"
     alias ni="nerdctl images"
     alias nb="nerdctl build"
