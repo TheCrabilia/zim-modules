@@ -42,7 +42,7 @@
     bindkey "${key_info[Control]}E" end-of-line
     bindkey "${key_info[Control]}B" backward-word
     bindkey "${key_info[Control]}F" forward-word
-    bindkey "${key_info[Control]}R" history-incremenal-search-backward
+    bindkey "${key_info[Control]}R" history-incremental-search-backward
 
     autoload -Uz edit-command-line && zle -N edit-command-line && \
         bindkey "${key_info[Control]}x${key_info[Control]}e" edit-command-line
