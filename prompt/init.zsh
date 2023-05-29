@@ -2,8 +2,9 @@
 setopt prompt_subst
 
 autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
+autoload -Uz add-zsh-hook
+
+add-zsh-hook precmd vcs_info
 zstyle ':vcs_info:git:*' formats ' %b '
 
 # Colors
