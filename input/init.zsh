@@ -55,11 +55,13 @@
     ## Plugin bindgins
 
     # Bind autosuggest-accept to ctrl+space
-    bindkey "${key_info[Control]} " autosuggest-accept
+    zle -N autosuggest-accept && bindkey "${key_info[Control]} " autosuggest-accept
 
     # Bind up/down to substring search
-    bindkey "${key_info[Up]}" history-substring-search-up
-    bindkey "${key_info[Down]}" history-substring-search-down
-    bindkey "${key_info[Control]}P" history-substring-search-up
-    bindkey "${key_info[Control]}N" history-substring-search-down
+    zle -N history-substring-search-up history-substring-search-down && () {
+        bindkey "${key_info[Up]}" history-substring-search-up
+        bindkey "${key_info[Down]}" history-substring-search-down
+        bindkey "${key_info[Control]}P" history-substring-search-up
+        bindkey "${key_info[Control]}N" history-substring-search-down
+    }
 }
