@@ -16,5 +16,5 @@ YELLOW=214
 BLUE=69
 
 # Prompt variables
-PROMPT=$'%F{$YELLOW}%1~%f %F{$BLUE}${vcs_info_msg_0_}%f%F{$GRAY}>%f '
+PROMPT=$'%F{$GRAY}[%f%F{$YELLOW}%0~%f%F{$GRAY}]%f %F{$BLUE}${vcs_info_msg_0_}%f%F{$GRAY}>%f '
 RPROMPT=$'%F{$RED}%(?..%?)%f'
