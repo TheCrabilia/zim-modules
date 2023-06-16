@@ -18,7 +18,7 @@ if [[ $corp_proxy == "yes" ]]; then
         if [[ $(is_corpnet)$? -eq 0 || $(is_vpn)$? -eq 0 ]]; then
             export HTTP_PROXY="http://aproxy.corproot.net:8080"
             export HTTPS_PROXY="http://aproxy.corproot.net:8080"
-            export NO_PROXY="localhost,127.0.0.1,.corproot.net,.swisscom.com"
+            export NO_PROXY="localhost,127.0.0.1,192.168.5.15,.corproot.net,.swisscom.com"
             export http_proxy=$HTTP_PROXY
             export https_proxy=$HTTPS_PROXY
             export no_proxy=$NO_PROXY
