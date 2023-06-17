@@ -4,9 +4,9 @@ zstyle -s ':crb:environment:history' histfile histfile || histfile=$HOME/.zhisto
 zstyle -s ':crb:environment:history' histsize histsize || histsize=20000
 zstyle -s ':crb:environment:history' savehist savehist || savehist=10000
 
-HISTFILE=$histfile
-HISTSIZE=$histsize
-SAVEHIST=$savehist
+export HISTFILE=$histfile
+export HISTSIZE=$histsize
+export SAVEHIST=$savehist
 
 setopt hist_verify
 setopt append_history
