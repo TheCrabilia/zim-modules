@@ -12,9 +12,10 @@
         source $init_file
     fi
 
-    if [[ $OSTYPE =~ "darwin*" && ! -d $XDG_DATA_HOME/1password ]]; then
-        mkdir -p $HOME/.1password && \
-        ln -s ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock $HOME/.1password/agent.sock
+    local agent_dir=$HOME/.1password
+    if [[ $OSTYPE =~ "darwin*" && ! -d $agent_dir ]]; then
+        mkdir -p $agent_dir && \
+        ln -s ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock $agent_dir/agent.sock
     fi
-    export SSH_AUTH_SOCK=$HOME/.1password/agent.sock
+    export SSH_AUTH_SOCK=$agent_dir/agent.sock
 } ${0:h}
