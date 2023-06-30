@@ -10,13 +10,13 @@ export SAVEHIST=$savehist
 
 setopt APPEND_HISTORY           # append history to the history file
 setopt EXTENDED_HISTORY         # save timestamp and duration of command in the history file
-setopt INC_APPEND_HISTORY       
+setopt INC_APPEND_HISTORY       # write to the history file immediately, not when shell exits
 
-setopt HIST_VERIFY
-setopt HIST_SAVE_NO_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_IGNORE_DUPS
-setopt HIST_FIND_NO_DUPS
+setopt HIST_VERIFY              # don't execute immediately upon history expansion
+setopt HIST_SAVE_NO_DUPS        # don't save duplicates in the history file
+setopt HIST_IGNORE_SPACE        # ignore commands that start with a space
+setopt HIST_IGNORE_DUPS         # ignore duplicates in the history file
+setopt HIST_FIND_NO_DUPS        # don't display duplicates when searching
 setopt HIST_EXPIRE_DUPS_FIRST   # expire duplicates first when trimming history
 
 setopt AUTO_CD		            # cd if "command" is a directory
