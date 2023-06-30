@@ -8,30 +8,35 @@ export HISTFILE=$histfile
 export HISTSIZE=$histsize
 export SAVEHIST=$savehist
 
-setopt hist_verify
-setopt append_history
-setopt inc_append_history
-setopt hist_ignore_space
-setopt hist_save_no_dups
+setopt APPEND_HISTORY           # append history to the history file
+setopt EXTENDED_HISTORY         # save timestamp and duration of command in the history file
+setopt INC_APPEND_HISTORY       
 
-setopt auto_cd		            # cd if "command" is a directory
-setopt cd_silent                # don't print the working direcotry after a cd
+setopt HIST_VERIFY
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_EXPIRE_DUPS_FIRST   # expire duplicates first when trimming history
 
-setopt auto_list		        # automatically list choises on an ambiguouse completion
-setopt extended_glob	        # treat the # ~ ^ as part of patterns for filename generation
-setopt notify		            # report the status of background jobs immediately
-setopt no_correct_all	        # do not correct commands and arguments
-setopt no_beep		            # disable beep
+setopt AUTO_CD		            # cd if "command" is a directory
+setopt CD_SILENT                # don't print the working direcotry after a cd
 
-setopt auto_pushd	            # make cd push the old dir onto the dir stack
-setopt pushd_minus	            # exchanges the meanings of + and - when used with a number to specify a dir in the stack
-setopt pushd_ignore_dups	    # don't push multiple copies of the same dir onto the dir stack
-setopt pushd_silent             # don't print the directory stack after pushd or popd
-setopt pushd_to_home            # have pushd without arguments act like "pushd ${HOME}"
+setopt AUTO_LIST		        # automatically list choises on an ambiguouse completion
+setopt EXTENDED_GLOB	        # treat the # ~ ^ as part of patterns for filename generation
+setopt NOTIFY		            # report the status of background jobs immediately
+setopt NO_CORRECT_ALL	        # do not correct commands and arguments
+setopt NO_BEEP		            # disable beep
 
-setopt interactive_comments     # allow comments starting with # in the interactive shell
-setopt no_clobber               # disallow > to overwrite existing files, use >| or >! instead
+setopt AUTO_PUSHD	            # make cd push the old dir onto the dir stack
+setopt PUSHD_MINUS	            # exchanges the meanings of + and - when used with a number to specify a dir in the stack
+setopt PUSHD_IGNORE_DUPS	    # don't push multiple copies of the same dir onto the dir stack
+setopt PUSHD_SILENT             # don't print the directory stack after pushd or popd
+setopt PUSHD_TO_HOME            # have pushd without arguments act like "pushd ${HOME}"
 
-setopt no_bg_nice               # prevent background jobs being given a lower priority
-setopt long_list_jobs	        # print job notifications in the long format by default
-setopt no_hup		            # do not send HUP (Hang UP) signal to running jobs on exit
+setopt INTERACTIVE_COMMENTS     # allow comments starting with # in the interactive shell
+setopt NO_CLOBBER               # disallow > to overwrite existing files, use >| or >! instead
+
+setopt NO_BG_NICE               # prevent background jobs being given a lower priority
+setopt LONG_LIST_JOBS	        # print job notifications in the long format by default
+setopt NO_HUP		            # do not send HUP (Hang UP) signal to running jobs on exit
